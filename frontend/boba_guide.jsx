@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/Root';
 
 import configureStore from './store/store';
 import * as SessActions from './actions/session_actions';
@@ -11,5 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = SessActions.login;
 
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>entry file</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
+  console.log('====================================');
+  console.log(typeof store);
+  console.log('====================================');
 });
