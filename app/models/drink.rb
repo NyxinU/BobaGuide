@@ -14,14 +14,10 @@
 class Drink < ApplicationRecord
   validates :menu_id, :name, presence: true
 
-  # belongs_to :menu,
-  #   foreign_key: :menu_id,
-  #   class_name: :Menu
-  #
-  # has_many :reviews,
-  #   foreign_key: :drink_id,
-  #   class_name: :Review,
-  #   dependent: :destroy
+  belongs_to :menu
+
+  has_many :reviews,
+    dependent: :destroy
 
   def add_review(rating)
     old_reviews = self.num_reviews
