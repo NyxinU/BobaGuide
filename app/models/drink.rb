@@ -16,10 +16,7 @@ class Drink < ApplicationRecord
 
   belongs_to :menu
 
-  # has_many :reviews,
-  #   foreign_key: :drink_id,
-  #   class_name: :Review,
-  #   dependent: :destroy
+  has_many :reviews
 
   def add_review(rating)
     old_reviews = self.num_reviews
