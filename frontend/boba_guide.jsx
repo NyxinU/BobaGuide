@@ -13,7 +13,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
-  console.log('====================================');
-  console.log(typeof store);
-  console.log('====================================');
 });
