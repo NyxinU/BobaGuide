@@ -25,7 +25,7 @@ Review.destroy_all
 default_users.each do |name|
   pw = "#{name[:f]}123"
   email = "#{name[:f]}@email.com"
-  User.create(password: pw, email: email, first_name: "#{name[:f]}", last_name: "#{name[:l]}")
+  User.create( password: pw, email: email, first_name: "#{name[:f]}", last_name: "#{name[:l]}" )
 end
 
 store = Menu.create(store_id: "boba-guys-san-francisco-6")
