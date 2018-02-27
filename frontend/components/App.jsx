@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
   Route,
   Switch,
@@ -7,14 +8,15 @@ import {
 import HeaderContainer from './header/Header_container';
 import SignUpFormContainer from './session_form/Signup_form_container';
 import LogInFormContainer from './session_form/Login_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <h1>Boba Guide</h1>
     <HeaderContainer />
     <Switch>
-      <Route exact path="/login" component={LogInFormContainer} />
-      <Route exact path="/signup" component={SignUpFormContainer} />
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     </Switch>
   </div>
 );
