@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20180227023416) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["menu_id"], name: "index_drinks_on_menu_id"
-  end 
-  
+  end
+
   create_table "menus", force: :cascade do |t|
     t.string "store_id", null: false
     t.datetime "created_at", null: false

@@ -14,10 +14,8 @@
 class Drink < ApplicationRecord
   validates :menu_id, :name, presence: true
 
-  # belongs_to :menu,
-  #   foreign_key: :menu_id,
-  #   class_name: :Menu
-  #
+  belongs_to :menu
+
   # has_many :reviews,
   #   foreign_key: :drink_id,
   #   class_name: :Review,
