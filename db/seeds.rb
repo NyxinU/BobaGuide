@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# default_users = [
-#   "demo", "nixon", "jimmy", "brian", "betty", "rebekah", "tommy", "jerry", "david", "mike",
-# ]
+default_users = [
+  { f:"nixon", l:"yiu" },
+   { f:"jimmy", l:"li" },
+   { f:"brian", l:"sohn" },
+   { f:"betty", l:"lam" },
+   { f:"rebekah", l:"liu" },
+   { f:"tommy", l:"kilmer" },
+   { f:"jerry", l:"lau" },
+   { f:"david", l:"jang" },
+   { f:"mike", l:"quint" },
+]
 
-# default_users.each_with_index do |username, i|
-#   pw = "#{username}123"
-#   email = "#{username}@demo.com"
-#   User.create(password: pw, email: email,)
-# end
+User.destroy_all
+
+default_users.each do |name|
+  pw = "#{name[:f]}123"
+  email = "#{name[:f]}@email.com"
+  User.create(password: pw, email: email, first_name: "#{name[:f]}", last_name: "#{name[:l]}")
+end
