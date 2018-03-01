@@ -1,5 +1,9 @@
 class Api::DrinksController < ApplicationController
-  before_action :require_logged_in
+  # before_action :require_logged_in only: [:create]
+
+  def index 
+
+  end 
 
   def create
     @drink = Drink.new(drink_params)
@@ -12,9 +16,9 @@ class Api::DrinksController < ApplicationController
   end 
 
   def show
-    @drinks = Drink.find_by(id: params[:id])
+    @drink = Drink.find_by(id: params[:id])
     
-    if @drinks
+    if @drink
       render :show 
     else 
       render ["Drink does not exist"], status: 404
@@ -24,6 +28,6 @@ class Api::DrinksController < ApplicationController
   private 
 
   def drink_params
-    params.require(:drink).permit(:menu_id, :name, :num_reviews, :avg_rating)
+    params.require(:drink).permit(:menu_id, :name, :num_reviews, :avg_rating, :store_id)
   end 
 end
