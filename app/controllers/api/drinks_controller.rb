@@ -2,9 +2,7 @@ class Api::DrinksController < ApplicationController
   # before_action :require_logged_in only: [:create]
 
   def index 
-    @drinks = Drink.where(store_id: params[:store_id])
 
-    render :index
   end 
 
   def create
