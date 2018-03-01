@@ -1,8 +1,8 @@
 class Api::DrinksController < ApplicationController
-  before_action :require_logged_in only: [:create]
+  # before_action :require_logged_in only: [:create]
 
   def index 
-    @drinks = Drink.where(store_id: store_id)
+    @drinks = Drink.where(store_id: params[:store_id])
 
     render :index
   end 
@@ -30,6 +30,6 @@ class Api::DrinksController < ApplicationController
   private 
 
   def drink_params
-    params.require(:drink).permit(:menu_id, :name, :num_reviews, :avg_rating)
+    params.require(:drink).permit(:menu_id, :name, :num_reviews, :avg_rating, :store_id)
   end 
 end

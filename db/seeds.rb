@@ -30,8 +30,8 @@ end
 
 store = Menu.create(store_id: "boba-guys-san-francisco-6")
 
-d1 = Drink.create(menu_id: store.id, name: "Classic Milk Tea")
-d2 = Drink.create(menu_id: store.id, name: "Muscat Oolong Milk Tea")
+d1 = Drink.create(menu_id: store.store_id, name: "Classic Milk Tea")
+d2 = Drink.create(menu_id: store.store_id, name: "Muscat Oolong Milk Tea")
 
 Review.create(
   drink_id: d1.id,
