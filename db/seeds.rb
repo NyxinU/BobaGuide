@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Menu.destroy_all
+Drink.destroy_all
+Review.destroy_all
 
 default_users = [
   { f: "nixon", l: "yiu" },
@@ -17,10 +21,6 @@ default_users = [
   { f: "david", l: "jang" },
   { f: "mike", l: "quint" },
 ]
-
-User.destroy_all
-Menu.destroy_all
-Review.destroy_all
 
 default_users.each do |name|
   pw = "#{name[:f]}123"
@@ -37,7 +37,7 @@ Review.create(
   drink_id: d1.id,
   user_id: User.first.id,
   rating: 3,
-  body: "Great!"
+  body: "Meh, it was alright"
 )
 
 Review.create(
