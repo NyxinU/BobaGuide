@@ -37,7 +37,7 @@ Review.create(
   drink_id: d1.id,
   user_id: User.first.id,
   rating: 3,
-  body: "Meh, it was alrightg"
+  body: "Meh, it was alright"
 )
 
 Review.create(
