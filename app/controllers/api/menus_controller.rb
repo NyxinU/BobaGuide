@@ -1,6 +1,7 @@
 class Api::MenusController < ApplicationController
+
   def show 
-    @menu = Menu.find_by(store_id: params[:store_id])
+    @menu = Menu.find_by(store_id: params[:id])
 
     if @menu 
       render :show 
