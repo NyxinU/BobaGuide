@@ -23,19 +23,26 @@ class Api::ReviewsController < ApplicationController
   def show 
     @review = Review.find(params[:id])
 
-    if @review 
-      render :show 
+    if @review
+      render :show
     else 
-      render ["Review does not exist"], status 404 
+      render ["Review does not exist"], status: 404
     end 
   end 
 
   def update 
-    @review = Review.update()
+    @review = Review.find(params[:id])
+
+    if @review.update_attributes(review_params)
+      render :show 
+    else 
+      render json: @reviews.erros.full_messages, status: 422 
+    end 
   end 
 
   def destroy 
-
+    review = Review.find(params[:id])
+    review.destroy
   end 
 
   private 
