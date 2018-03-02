@@ -1,0 +1,24 @@
+$btn-padding: 7px 10px;
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em;
+  color: white;
+
+  .header-btn {
+    padding: $btn-padding;
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .login {
+
+  }
+
+  .signup {
+
+  }
+}
