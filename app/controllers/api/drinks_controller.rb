@@ -2,7 +2,13 @@ class Api::DrinksController < ApplicationController
   # before_action :require_logged_in only: [:create]
 
   def index 
+    @drinks = Drink.where(menu_id: params[:menu_id])
 
+    if @drinks 
+      render :index
+    else 
+      render ["Menu does not exist"], status: 404
+    end 
   end 
 
   def create
