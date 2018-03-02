@@ -1,18 +1,12 @@
 class Api::MenusController < ApplicationController
 
-  # def index 
-  #   @menus = Menu.all.includes(:drinks) 
+  def create
+    @menu = Menu.new(menu_params)
 
-  #   render :index
-  # end 
-
-  def show 
-    @menu = Menu.find_by(store_id: params[:id])
-
-    if @menu 
+    if @emnu.save
       render :show 
     else 
-      render ["Store does not exist"], status: 404 
+      render json: @menu.errors.full_messages, status: 422
     end 
   end 
 
