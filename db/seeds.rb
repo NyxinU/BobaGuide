@@ -22,62 +22,70 @@ default_users = [
   { f: "mike", l: "quint" },
 ]
 
+all_users = []
 default_users.each do |name|
   pw = "#{name[:f]}123"
   email = "#{name[:f]}@email.com"
-  User.create( password: pw, email: email, first_name: "#{name[:f]}", last_name: "#{name[:l]}" )
+  all_users << User.create( password: pw, email: email, first_name: "#{name[:f]}", last_name: "#{name[:l]}" )
 end
 
-store1 = Menu.create(store_id: "boba-guys-san-francisco-6")
-store2 = Menu.create(store_id: "boba-guys-san-francisco-4")
-store3 = Menu.create(store_id: "boba-guys-san-francisco-7")
+stores = [
+  "boba-guys-san-francisco-7",
+  "boba-guys-san-francisco-6",
+  "boba-guys-san-francisco-4",
+]
 
-d1 = Drink.create(menu_id: store1.id, name: "Classic Milk Tea")
-d2 = Drink.create(menu_id: store1.id, name: "Muscat Oolong Milk Tea")
-d3 = Drink.create(menu_id: store1.id, name: "Jasmine Milk Tea")
-d4 = Drink.create(menu_id: store1.id, name: "Hong Kong Style")
-d5 = Drink.create(menu_id: store1.id, name: "Horchata")
-d6 = Drink.create(menu_id: store1.id, name: "Thai Tea")
-d7 = Drink.create(menu_id: store1.id, name: "Iced Match Latte")
-d8 = Drink.create(menu_id: store1.id, name: "Coffee Milk Tea")
-d9 = Drink.create(menu_id: store1.id, name: "Lychee Green Tea Milk Tea")
-d10 = Drink.create(menu_id: store1.id, name: "Duke of Earl Grey Milk Tea")
+all_stores = []
+stores.each do |store|
+  all_stores << Menu.create(store_id: store)
+end 
 
-d11 = Drink.create(menu_id: store2.id, name: "Classic Milk Tea")
-d12 = Drink.create(menu_id: store2.id, name: "Muscat Oolong Milk Tea")
-d13 = Drink.create(menu_id: store2.id, name: "Jasmine Milk Tea")
-d14 = Drink.create(menu_id: store2.id, name: "Hong Kong Style")
-d15 = Drink.create(menu_id: store2.id, name: "Horchata")
-d16 = Drink.create(menu_id: store2.id, name: "Thai Tea")
-d17 = Drink.create(menu_id: store2.id, name: "Iced Match Latte")
-d18 = Drink.create(menu_id: store2.id, name: "Coffee Milk Tea")
-d19 = Drink.create(menu_id: store2.id, name: "Lychee Green Tea Milk Tea")
-d20 = Drink.create(menu_id: store2.id, name: "Duke of Earl Grey Milk Tea")
+drinks = [
+  "Classic Milk Tea", 
+  "Jasmine Milk Tea", 
+  "Hong Kong Style", 
+  "Horchata", 
+  "Thai Tea",
+  "Iced Matcha Latte",
+  "Coffee Milk Tea",
+  "Muscat Oolong Milk Tea",           
+  "Lychee Green Tea Milk Tea",
+  "Duke of Earl Grey Milk Tea",
+  "Rose Black Tea Milk Tea",
+  "Golden Honey Black Milk Tea",
+  "Hojicha Milk Tea",
+  "Decaf Black Milk Tea",
+  "Chamomile Mint Milk Tea"
+]
 
-d21 = Drink.create(menu_id: store3.id, name: "Classic Milk Tea")
-d22 = Drink.create(menu_id: store3.id, name: "Muscat Oolong Milk Tea")
-d23 = Drink.create(menu_id: store3.id, name: "Jasmine Milk Tea")
-d24 = Drink.create(menu_id: store3.id, name: "Hong Kong Style")
-d25 = Drink.create(menu_id: store3.id, name: "Horchata")
-d26 = Drink.create(menu_id: store3.id, name: "Thai Tea")
-d27 = Drink.create(menu_id: store3.id, name: "Iced Match Latte")
-d28 = Drink.create(menu_id: store3.id, name: "Coffee Milk Tea")
-d29 = Drink.create(menu_id: store3.id, name: "Lychee Green Tea Milk Tea")
-d30 = Drink.create(menu_id: store3.id, name: "Duke of Earl Grey Milk Tea")
+all_drinks = []
+stores.length.times do |i|
+  drinks.each do |name|
+    all_drinks << Drink.create(menu_id: all_stores[i].id, name: name)
+  end 
+end 
 
-Review.create(
-  drink_id: d1.id,
-  user_id: User.first.id,
-  rating: 3,
-  body: "Meh, it was alright"
-)
+ratings = (1..5).to_a
+bodies = [
+  "worst thing I have ever drank in my life",
+  "not good, would not come again",
+  "meh nothing special, not really worth the trip",
+  "the drink was pretty good, will come back",
+  "AMAZING, SO GOOD, 10/10 will come back!!!"
+]
+sugar_ice_level = [0, 25, 50, 75, 100]
+all_toppings = ["tapioca balls", "almond jelly", "grass jelly"]
 
-Review.create(
-  drink_id: d2.id,
-  user_id: User.first.id,
-  rating: 5,
-  body: "Da best!",
-  sugar: 70,
-  ice: 50,
-  toppings: 'honey boba'
-)
+all_reviews = []
+100.times do
+  rating = ratings.sample
+  all_reviews << Review.create(
+    drink_id: all_drinks[0..14].sample.id,
+    user_id: all_users.sample.id,
+    rating: rating,
+    body: bodies[rating - 1],
+    sugar: sugar_ice_level.sample,
+    ice: sugar_ice_level.sample,
+    toppings: all_toppings.sample
+  )
+end
