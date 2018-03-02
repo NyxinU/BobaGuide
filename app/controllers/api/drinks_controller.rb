@@ -22,7 +22,7 @@ class Api::DrinksController < ApplicationController
   end 
 
   def show
-    @drink = Drink.find_by(id: params[:id])
+    @drink = Drink.find(params[:id])
     
     if @drink
       render :show 

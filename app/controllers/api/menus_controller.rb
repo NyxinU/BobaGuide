@@ -3,7 +3,7 @@ class Api::MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
 
-    if @emnu.save
+    if @menu.save
       render :show 
     else 
       render json: @menu.errors.full_messages, status: 422

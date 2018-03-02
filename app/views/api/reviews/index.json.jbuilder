@@ -1,0 +1,11 @@
+json.drink do 
+  json.partial! 'api/drinks/drink', drink: @drink 
+end 
+
+json.reviews do 
+  @drink.reviews.each do |review|
+    json.set! review.id do 
+      json.partial! 'api/reviews/review', review: review
+    end 
+  end 
+end 
