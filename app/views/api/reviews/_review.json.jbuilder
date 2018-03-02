@@ -1,0 +1,12 @@
+json.extract! review, :id, 
+                      :drink_id, 
+                      :user_id,
+                      :rating,
+                      :body,
+                      :sugar,
+                      :ice,
+                      :toppings,
+                      :img_url,
+                      :updated_at,
+                      :hot,
+                      :public
