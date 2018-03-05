@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
   <nav className="header">
+    <h1 className="logo">Boba Guide</h1>
     <Link className="header-btn login" to="/login">Login</Link>
     <Link className="header-btn signup" to="/signup">Sign up!</Link>
   </nav>
