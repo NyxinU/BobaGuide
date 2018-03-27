@@ -13,3 +13,9 @@ export const createMenu = menu => dispatch => (
   ))
 );
 
+export const fetchMenu = menu => dispatch => (
+  MenuApiUtil.fetchMenu(menu).then(menu => (
+    dispatch(receiveMenu(menu))
+  ))
+);
+
