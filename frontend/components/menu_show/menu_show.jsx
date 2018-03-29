@@ -1,7 +1,9 @@
 import React from 'react';
 
 const MenuShow = (menu) => {
-  console.log(menu);
+
+  this.props.fetchMenu(this.menu.id);
+
   return (
     <div>
       Menu Show

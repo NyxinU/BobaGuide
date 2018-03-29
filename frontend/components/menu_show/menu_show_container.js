@@ -4,6 +4,7 @@ import { fetchMenu, createMenu } from '../../actions/menu_actions';
 import MenuShow from './menu_show';
 
 const mapStateToProps = ({ entities }) => {
+  console.log(entities);
   const { menu } = entities;
   return {
     menu,
