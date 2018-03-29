@@ -1,8 +1,11 @@
 import axios from 'axios';
+import config from '../../config';
+
+const key = { Authorization: `Bearer ${config.ApiKey}` };
 
 const url = 'http://localhost:3000';
 
-const createMenu = menu => (
+export const createMenu = menu => (
   axios({
     method: 'POST',
     url: `${url}/api/menus`,
@@ -10,5 +13,10 @@ const createMenu = menu => (
   })
 );
 
-export default createMenu;
-
+export const fetchMenu = id => (
+  axios({
+    method: 'GET',
+    url: `https://api.yelp.com/v3/businesses/${id}`,
+    headers: key,
+  })
+);
