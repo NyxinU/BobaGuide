@@ -1,12 +1,21 @@
 import React from 'react';
 
-const MenuShow = (props) => {
-  console.log(props);
-  return (
-    <div>
-      Menu Show
-    </div>
-  );
-};
+class MenuShow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
+    this.props.fetchMenu(this.props.match.params.businessId)
+  }
+
+  render () {
+    return (
+      <div>
+
+      </div>
+    );
+  }
+}
 
 export default MenuShow;

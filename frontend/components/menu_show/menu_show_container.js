@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 
-import { createMenu } from '../../actions/menu_actions';
-import testMenu from '../../../testData.json';
+import { createMenu, fetchMenu } from '../../actions/menu_actions';
+// import testMenu from '../../../testData.json';
 import MenuShow from './menu_show';
 
-const mapStateToProps = () => ({
-  testMenu,
-});
+const mapStateToProps = state => (
+  state
+);
 
 const mapDispatchToProps = dispatch => ({
   createMenu: menu => dispatch(createMenu(menu)),
+  fetchMenu: id => dispatch(fetchMenu(id)),
 });
 
 export default connect(

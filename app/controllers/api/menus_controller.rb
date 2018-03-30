@@ -3,7 +3,9 @@ class Api::MenusController < ApplicationController
   require "http"
   require "optparse"
 
+
   # Constants, do not change these
+  API_KEY = '467mR1Rp6HH3uwrJdQulLhSstM1SMXY_LJyCKZD_DgVuYPUTVRh9YFbXES9vrUOiVmX32U04PYyMK7c38tzd0JNaIyny_pdVf0dnrJNTI6ak6cpoCwkOl2QlJVqOWnYx'
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
@@ -28,8 +30,8 @@ class Api::MenusController < ApplicationController
     url = "#{API_HOST}#{BUSINESS_PATH}#{params[:id]}"
 
     response = HTTP.auth("Bearer #{API_KEY}").get(url)
-    response.parse
-    debugger
+    @menu = response.parse
+    render json: @menu.to_json
   end 
 
   private 
