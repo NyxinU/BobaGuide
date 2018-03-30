@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import { createMenu, fetchMenu } from '../../actions/menu_actions';
-// import testMenu from '../../../testData.json';
 import MenuShow from './menu_show';
 
 const mapStateToProps = state => (
