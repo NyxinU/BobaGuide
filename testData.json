@@ -1,0 +1,95 @@
+{
+  "id": "boba-guys-san-francisco-6",
+  "name": "Boba Guys",
+  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/yXYVbVDnWfd0CnNNd4uLrQ/o.jpg",
+  "is_claimed": true,
+  "is_closed": false,
+  "url": "https://www.yelp.com/biz/boba-guys-san-francisco-6?adjust_creative=Fn71SGauCA7uS0y5tKJ3Xw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=Fn71SGauCA7uS0y5tKJ3Xw",
+  "phone": "+14159672622",
+  "display_phone": "(415) 967-2622",
+  "review_count": 1437,
+  "categories": [
+    {
+      "alias": "coffee",
+      "title": "Coffee & Tea"
+    },
+    {
+      "alias": "bubbletea",
+      "title": "Bubble Tea"
+    },
+    {
+      "alias": "desserts",
+      "title": "Desserts"
+    }
+  ],
+  "rating": 4,
+  "location": {
+    "address1": "429 Stockton St",
+    "address2": "",
+    "address3": "",
+    "city": "San Francisco",
+    "zip_code": "94108",
+    "country": "US",
+    "state": "CA",
+    "display_address": [
+      "429 Stockton St",
+      "San Francisco, CA 94108"
+    ],
+    "cross_streets": "Bush St & Sutter St"
+  },
+  "coordinates": {
+    "latitude": 37.7899434017563,
+    "longitude": -122.407306303981
+  },
+  "photos": [
+    "https://s3-media4.fl.yelpcdn.com/bphoto/yXYVbVDnWfd0CnNNd4uLrQ/o.jpg",
+    "https://s3-media1.fl.yelpcdn.com/bphoto/LFs0QD_LJgPHEw8Y1fTGdg/o.jpg",
+    "https://s3-media4.fl.yelpcdn.com/bphoto/aRPjWQiKlocuGY1JLZ6qHQ/o.jpg"
+  ],
+  "price": "$",
+  "hours": [
+    {
+      "open": [
+        {
+          "is_overnight": false,
+          "start": "0800",
+          "end": "2100",
+          "day": 1
+        },
+        {
+          "is_overnight": false,
+          "start": "0800",
+          "end": "2100",
+          "day": 2
+        },
+        {
+          "is_overnight": false,
+          "start": "0800",
+          "end": "2100",
+          "day": 3
+        },
+        {
+          "is_overnight": false,
+          "start": "0800",
+          "end": "2200",
+          "day": 4
+        },
+        {
+          "is_overnight": false,
+          "start": "1200",
+          "end": "2200",
+          "day": 5
+        },
+        {
+          "is_overnight": false,
+          "start": "1200",
+          "end": "1800",
+          "day": 6
+        }
+      ],
+      "hours_type": "REGULAR",
+      "is_open_now": true
+    }
+  ],
+  "transactions": []
+}

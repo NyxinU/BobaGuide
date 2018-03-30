@@ -1,18 +1,14 @@
 import { connect } from 'react-redux';
 
-import { fetchMenu, createMenu } from '../../actions/menu_actions';
+import { createMenu } from '../../actions/menu_actions';
+import testMenu from '../../../testData.json';
 import MenuShow from './menu_show';
 
-const mapStateToProps = ({ entities }) => {
-  console.log(entities);
-  const { menu } = entities;
-  return {
-    menu,
-  };
-};
+const mapStateToProps = () => ({
+  testMenu,
+});
 
 const mapDispatchToProps = dispatch => ({
-  fetchMenu: id => dispatch(fetchMenu(id)),
   createMenu: menu => dispatch(createMenu(menu)),
 });
 
