@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const url = 'http://localhost:3000';
 
-export const fetchDrinks = menuId => (
+export const fetchDrinks = storeId => (
   axios({
     method: 'GET',
-    url: `${url}/api/menus/${menuId}/drinks`,
+    url: `${url}/api/stores/${storeId}/drinks`,
   })
 );
 

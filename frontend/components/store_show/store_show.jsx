@@ -1,12 +1,12 @@
 import React from 'react';
 
-class MenuShow extends React.Component {
+class StoreShow extends React.Component {
   constructor(props) {
     super(props);
   }
   
   componentDidMount() {
-    this.props.fetchMenu(this.props.match.params.businessId)
+    this.props.fetchStore(this.props.match.params.businessId)
   }
 
   render () {
@@ -18,4 +18,4 @@ class MenuShow extends React.Component {
   }
 }
 
-export default MenuShow;
+export default StoreShow;

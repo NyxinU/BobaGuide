@@ -1,1 +1,1 @@
-json.extract! drink, :id, :menu_id, :name 
+json.extract! drink, :id, :store_id, :name 

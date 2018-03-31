@@ -1,4 +1,4 @@
-class Api::MenusController < ApplicationController
+class Api::StoresController < ApplicationController
   require "json"
   require "http"
   require "optparse"
@@ -17,12 +17,12 @@ class Api::MenusController < ApplicationController
   SEARCH_LIMIT = 5
 
   def create
-    @menu = Menu.new(menu_params)
+    @store = Store.new(store_params)
 
-    if @menu.save
+    if @store.save
       render :show 
     else 
-      render json: @menu.errors.full_messages, status: 422
+      render json: @store.errors.full_messages, status: 422
     end 
   end 
 
@@ -30,13 +30,13 @@ class Api::MenusController < ApplicationController
     url = "#{API_HOST}#{BUSINESS_PATH}#{params[:id]}"
 
     response = HTTP.auth("Bearer #{API_KEY}").get(url)
-    @menu = response.parse
-    render json: @menu.to_json
+    @store = response.parse
+    render json: @store.to_json
   end 
 
   private 
 
-  def menu_params 
-    params.require(:menu).permit(:store_id)
+  def store_params 
+    params.require(:store).permit(:store_id)
   end 
 end

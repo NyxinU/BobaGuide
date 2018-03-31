@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-Menu.destroy_all
+Store.destroy_all
 Drink.destroy_all
 Review.destroy_all
 
@@ -37,7 +37,7 @@ stores = [
 
 all_stores = []
 stores.each do |store|
-  all_stores << Menu.create(store_id: store)
+  all_stores << Store.create(store_id: store)
 end 
 
 drinks = [
@@ -61,7 +61,7 @@ drinks = [
 all_drinks = []
 stores.length.times do |i|
   drinks.each do |name|
-    all_drinks << Drink.create(menu_id: all_stores[i].id, name: name)
+    all_drinks << Drink.create(store_id: all_stores[i].id, name: name)
   end 
 end 
 
