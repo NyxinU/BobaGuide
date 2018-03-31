@@ -15,7 +15,7 @@ export const createStore = store => dispatch => (
 
 export const fetchStore = store => dispatch => (
   StoreApiUtil.fetchStore(store).then(store => (
-    dispatch(receiveStore(store))
+    dispatch(receiveStore(store.data))
   ))
 );
 
