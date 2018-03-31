@@ -3,7 +3,7 @@
 # Table name: drinks
 #
 #  id          :integer          not null, primary key
-#  menu_id     :integer          not null
+#  store_id     :integer          not null
 #  name        :string           not null
 #  num_reviews :integer          default(0)
 #  avg_rating  :float            default(0.0)

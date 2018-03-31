@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :drinks, only: [:create, :show] do 
       resources :reviews, only: [:index]
     end 
-    resources :menus, only: [:create] do
+    resources :stores, only: [:create, :show] do
       resources :drinks, only: [:index]
     end 
   end

@@ -1,9 +1,9 @@
-json.menu do 
-  json.partial! '/api/menus/menu', menu: @menu
+json.store do 
+  json.partial! '/api/stores/store', store: @store
 end 
 
 json.drinks do 
-  @menu.drinks.each do |drink|
+  @store.drinks.each do |drink|
     json.set! drink.id do 
       json.partial! '/api/drinks/drink', drink: drink 
     end 

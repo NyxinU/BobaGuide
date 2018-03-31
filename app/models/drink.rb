@@ -3,7 +3,7 @@
 # Table name: drinks
 #
 #  id          :integer          not null, primary key
-#  menu_id     :integer          not null
+#  store_id     :integer          not null
 #  name        :string           not null
 #  num_reviews :integer          default(0)
 #  avg_rating  :float            default(0.0)
@@ -12,9 +12,9 @@
 #
 
 class Drink < ApplicationRecord
-  validates :menu_id, :name, presence: true
+  validates :store_id, :name, presence: true
 
-  belongs_to :menu
+  belongs_to :store
 
   has_many :reviews
 
