@@ -1,2 +1,1 @@
-json.extract! store, :yelp_store_id,
-
+json.extract! store, :id, :yelp_store_id
