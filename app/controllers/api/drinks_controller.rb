@@ -7,7 +7,7 @@ class Api::DrinksController < ApplicationController
     if @store
       render :index
     else 
-      render ["Store does not exist"], status: 404
+      render json: ["Store does not exist"], status: 404
     end 
   end 
 
@@ -22,12 +22,12 @@ class Api::DrinksController < ApplicationController
   end 
 
   def show
-    @drink = Drink.find(params[:id])
+    @drink = Drink.find_by(id: params[:id])
     
     if @drink
       render :show 
     else 
-      render ["Drink does not exist"], status: 404
+      render json: ["Drink does not exist"], status: 404
     end 
   end 
   

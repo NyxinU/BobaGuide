@@ -18,14 +18,14 @@ class Drink < ApplicationRecord
 
   has_many :reviews
 
-  def add_review(rating)
-    old_reviews = self.num_reviews
-    old_rating = self.avg_rating
-    new_reviews = old_reviews + 1
-    new_rating = ((old_rating * num_reviews) + rating) / new_reviews
+  # def add_review(rating)
+  #   old_reviews = self.num_reviews
+  #   old_rating = self.avg_rating
+  #   new_reviews = old_reviews + 1
+  #   new_rating = ((old_rating * num_reviews) + rating) / new_reviews
 
-    self.update_attributes(num_reviews: new_reviews, avg_rating: new_rating)
-  end
+  #   self.update_attributes(num_reviews: new_reviews, avg_rating: new_rating)
+  # end
 
   def update_name(name)
     self.update_attributes(name: name)

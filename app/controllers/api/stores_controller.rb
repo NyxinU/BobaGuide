@@ -16,27 +16,34 @@ class Api::StoresController < ApplicationController
   DEFAULT_LOCATION = "San Francisco, CA"
   SEARCH_LIMIT = 5
 
-  def create
-    @store = Store.new(store_params)
+  # def create
+  #   @store = Store.new(store_params)
 
-    if @store.save
+  #   if @store.save
+  #     render :show 
+  #   else 
+  #     render json: @store.errors.full_messages, status: 422
+  #   end 
+  # end 
+
+  def show
+    @store = Store.find_by(id: params[:id])
+
+    if @store
       render :show 
     else 
-      render json: @store.errors.full_messages, status: 422
-    end 
-  end 
+      render json: ["Store does not exist"], status: 404
+    end  
 
-  def show 
-    url = "#{API_HOST}#{BUSINESS_PATH}#{params[:id]}"
-
-    response = HTTP.auth("Bearer #{API_KEY}").get(url)
-    @store = response.parse
+    # url = "#{API_HOST}#{BUSINESS_PATH}#{params[:id]}"
+    # response = HTTP.auth("Bearer #{API_KEY}").get(url)
+    # @store = response.parse
     
-    if @store['error']
-      render json: ['Business not found'], status: 404
-    else 
-      render json: @store.to_json
-    end 
+    # if @store['error']
+    #   render json: ['Business not found'], status: 404
+    # else 
+    #   render json: @store.to_json
+    # end 
   end 
 
   private 
