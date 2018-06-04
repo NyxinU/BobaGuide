@@ -2,7 +2,7 @@ class Api::DrinksController < ApplicationController
   # before_action :require_logged_in only: [:create]
 
   def index 
-    @store = Store.find_by(store_id: params[:store_id])
+    @store = Store.find_by(id: params[:store_id])
 
     if @store
       render :index

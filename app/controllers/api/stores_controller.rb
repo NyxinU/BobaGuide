@@ -42,6 +42,6 @@ class Api::StoresController < ApplicationController
   private 
 
   def store_params 
-    params.require(:store).permit(:store_id)
+    params.require(:store).permit(:yelp_store_id)
   end 
 end

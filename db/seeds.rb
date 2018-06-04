@@ -37,7 +37,7 @@ stores = [
 
 all_stores = []
 stores.each do |store|
-  all_stores << Store.create(store_id: store)
+  all_stores << Store.create(yelp_store_id: store)
 end 
 
 drinks = [
