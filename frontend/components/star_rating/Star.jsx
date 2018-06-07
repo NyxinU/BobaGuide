@@ -1,20 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+// import React from 'react';
+// import styled from 'styled-components';
 
-const StyledStar = styled.i`
-  color: black;
-`;
+// const StyledStar = styled.i`
+//   color: black;
+//   background-color: ${props => (props.num >= 0.25 ? 'red' : 'grey')};
+//   background-size: ${props => ()}
+// `;
 
-const Star = ({ num }) => (
-  <StyledStar className="fas fa-star" />
-);
+// const Star = ({ num }) => (
+//   <StyledStar className="fas fa-star" num={num} />
+// );
 
-// class Star extends React.Component {
-//   render() {
-//     return (
-//       <StyledStar className="fas fa-star"></StyledStar>
-//     )
-//   }
-// };
-
-export default Star;
+// export default Star;

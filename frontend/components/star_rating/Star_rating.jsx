@@ -1,19 +1,21 @@
-import React from 'react';
-import Star from './Star';
+// import React from 'react';
+// import Star from './Star';
 
-const StarRating = ({ rating }) => {
-  const arrRating = [];
-  let storeRating = rating;
+// const StarRating = ({ rating }) => {
+//   const ratingArr = [];
+//   let storeRating = rating;
 
-  while (arrRating.length < 5) {
-    arrRating.push(storeRating);
-    storeRating -= 1;
-  }
-  return (
-    <ul>
-      {arrRating.map((num, i) => <Star key={i} num={num} />)}
-    </ul>
-  );
-};
+//   while (ratingArr.length < 5) {
+//     if (storeRating >= 0.75) {
+//       ratingArr.push("full")
+//     }
+//     storeRating -= 1;
+//   }
+//   return (
+//     <ul>
+//       {ratingArr.map((num, i) => <Star key={i} num={num} />)}
+//     </ul>
+//   );
+// };
 
-export default StarRating;
+// export default StarRating;

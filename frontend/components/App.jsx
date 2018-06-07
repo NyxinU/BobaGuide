@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import styled from 'styled-components';
 
 import HeaderContainer from './header/Header_container';
 import SignUpFormContainer from './session_form/Signup_form_container';
