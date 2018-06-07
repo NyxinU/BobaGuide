@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
     if @drink 
       render :index 
     else 
-      render ["Drink does not exist"],  status: 404 
+      render json: ["Drink does not exist"],  status: 404 
     end 
   end 
 
@@ -21,17 +21,17 @@ class Api::ReviewsController < ApplicationController
   end 
 
   def show 
-    @review = Review.find(params[:id])
+    @review = Review.find_by(id: params[:id])
 
     if @review
       render :show
     else 
-      render ["Review does not exist"], status: 404
+      render json: ["Review does not exist"], status: 404
     end 
   end 
 
   def update 
-    @review = Review.find(params[:id])
+    @review = Review.find_by(id: params[:id])
 
     if @review.update_attributes(review_params)
       render :show 
@@ -41,14 +41,14 @@ class Api::ReviewsController < ApplicationController
   end 
 
   def destroy 
-    review = Review.find(params[:id])
+    review = Review.find_by(id: params[:id])
     review.destroy
   end 
 
   private 
 
   def review_params 
-    params.require(:review).permit(:id, :drink_id, :user_id, :rating, :body, :sugar, :ice, :toppings, :img_url, :hot, :public)
+    params.require(:review).permit(:drink_id, :user_id, :rating, :body, :sugar, :ice, :toppings, :img_url, :hot, :public)
   end 
 
 end

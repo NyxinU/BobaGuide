@@ -8,7 +8,7 @@ const storesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_STORE:
       newStore = { [action.store.id]: action.store };
-      return merge({}, state, newStore);
+      return merge({}, newStore);
     default:
       return state;
   }
