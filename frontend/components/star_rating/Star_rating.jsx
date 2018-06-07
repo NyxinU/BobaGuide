@@ -3,15 +3,15 @@ import Star from './Star';
 
 const StarRating = ({ rating }) => {
   const arrRating = [];
+  let storeRating = rating;
 
   while (arrRating.length < 5) {
-    arrRating.push(rating);
-    rating--;
+    arrRating.push(storeRating);
+    storeRating -= 1;
   }
-  console.log(arrRating)
   return (
     <ul>
-      
+      {arrRating.map((num, i) => <Star key={i} num={num} />)}
     </ul>
   );
 };
